@@ -10,7 +10,7 @@
           "safari": "10.1"
         },
         "useBuiltIns": "usage",
-        "corejs": "3.6.5"
+        "corejs": 3
       }
     ]
   ]

@@ -15,10 +15,10 @@
   "main": "./src/js/index.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
-    "watch-test": "jest --watch *.test.js",
+    "test:watch": "jest --watch *.test.js",
     "dev": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
+    "eslint": "npx eslint ./src/js/**/*.js --ignore-pattern node_modules/",
     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "jest": {
@@ -34,7 +34,9 @@
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",
     "@eslint/js": "^9.22.0",
+    "babel-jest": "^29.7.0",
     "babel-loader": "^10.0.0",
+    "core-js": "^3.41.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
