@@ -1,0 +1,11 @@
+@use '../utilities' as *;
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: red;
+  font-size: var(--fs-300);
+  font-family: var(--font-regular);
+}

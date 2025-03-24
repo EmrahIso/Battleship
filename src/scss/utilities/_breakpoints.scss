@@ -1,0 +1,40 @@
+// This code helps us to run media queries based on defined query breakpoints.
+
+@use 'sass:map';
+@use 'sass:meta';
+
+$breakpoints: (
+  'extra-small': (
+    max-width: 384px,
+  ),
+  'small': (
+    max-width: 576px,
+  ),
+  'medium': (
+    max-width: 768px,
+  ),
+  'large': (
+    max-width: 992px,
+  ),
+  'extra-large': (
+    max-width: 1200px,
+  ),
+);
+
+@mixin respond-to($breakpoint) {
+  $raw-query: map.get($breakpoints, $breakpoint);
+  @if $raw-query {
+    $query: if(
+      meta.type-of($raw-query) == 'string',
+      unquote($raw-query),
+      meta.inspect($raw-query)
+    );
+
+    @media only screen and #{$query} {
+      @content;
+    }
+  } @else {
+    @error "No value found for '#{$breakpoint}'."
+            + "Please make sure that it is defined in '$breakpoints' map.";
+  }
+}

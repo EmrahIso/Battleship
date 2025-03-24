@@ -1,0 +1,39 @@
+@use '../utilities' as *;
+@use '../utilities/variables' as *;
+@use '../utilities/type-scale' as *;
+@use '../utilities/color' as *;
+
+:root {
+  // Fonts
+  & {
+    @each $font, $name in $fonts {
+      --font-#{$font}: #{$name};
+    }
+  }
+
+  // Colors
+  & {
+    @each $color, $shades in $colors {
+      @each $shade, $value in $shades {
+        --clr-#{$color}-#{$shade}: #{$value};
+      }
+    }
+  }
+
+  // Type-scale
+
+  @each $screen-size, $font-size in $type-scale {
+    & {
+      @each $size, $value in $font-size {
+        --fs-#{$size}: #{$value};
+      }
+    }
+  }
+
+  // Shadows
+  & {
+    @each $name, $value in $shadows {
+      --shw-#{$name}: #{$value};
+    }
+  }
+}
