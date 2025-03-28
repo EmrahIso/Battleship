@@ -1,11 +1,727 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>BattleShip</title>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div class="body__grid">
+      <header class="header">
+        <div class="container header__content">
+          <div>
+            <button type="button" class="button">New Game</button>
+          </div>
+          <h1 class="logo">
+            <div class="logo__icon-cont">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                class="logo__icon"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M224,108H200a12,12,0,0,0,0,24h11.15A84.21,84.21,0,0,1,140,203.14V97.94a36,36,0,1,0-24,0v105.2A84.21,84.21,0,0,1,44.85,132H56a12,12,0,0,0,0-24H32a12,12,0,0,0-12,12,108,108,0,0,0,216,0A12,12,0,0,0,224,108ZM128,52a12,12,0,1,1-12,12A12,12,0,0,1,128,52Z"
+                ></path>
+              </svg>
+            </div>
+            <a href="#" class="logo__link"> BattleShip </a>
+            <div class="logo__icon-cont">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#000000"
+                class="logo__icon"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  d="M224,108H200a12,12,0,0,0,0,24h11.15A84.21,84.21,0,0,1,140,203.14V97.94a36,36,0,1,0-24,0v105.2A84.21,84.21,0,0,1,44.85,132H56a12,12,0,0,0,0-24H32a12,12,0,0,0-12,12,108,108,0,0,0,216,0A12,12,0,0,0,224,108ZM128,52a12,12,0,1,1-12,12A12,12,0,0,1,128,52Z"
+                ></path>
+              </svg>
+            </div>
+          </h1>
+          <div>
+            <button type="button" class="button">AI Difficulty</button>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <div class="container main__content">
+          <div class="gameboard__cont gameboard__cont--org">
+            <h2 class="gameboard__heading gameboard__heading--org">
+              <div
+                class="gameboard__heading-icon-cont gameboard__heading-icon-cont--org"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="gameboard__heading-icon gameboard__heading-icon--org"
+                >
+                  <path
+                    d="M222.33,106.79,212,103.35V56a20,20,0,0,0-20-20H140V24a12,12,0,0,0-24,0V36H64A20,20,0,0,0,44,56v47.35l-10.33,3.44a20,20,0,0,0-13.67,19V152c0,64.63,100.8,90.57,105.09,91.64a11.94,11.94,0,0,0,5.82,0C135.2,242.57,236,216.63,236,152V125.77A20,20,0,0,0,222.33,106.79ZM68,60H188V95.35L131.79,76.62a11.85,11.85,0,0,0-7.58,0L68,95.35Zm144,92c0,36.69-58.08,60.43-84,67.59-25.94-7.17-84-30.9-84-67.59V128.65l72-24V168a12,12,0,0,0,24,0V104.65l72,24Z"
+                  ></path>
+                </svg>
+              </div>
+              <span>Orange Fleet</span>
+            </h2>
+            <div class="gameboard gameboard--org" data-game-board-org>
+              <div class="gameboard__cell gameboard__cell--1">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--2">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--3">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--4">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--5">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--6">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--7">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--8">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--9">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--10">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--11">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--12">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--13">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--14">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--15">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--16">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--17">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--18">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--19">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--20">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--21">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--22">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--23">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--24">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--25">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--26">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--27">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--28">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--29">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--30">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--31">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--32">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--33">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--34">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--35">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--36">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--37">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--38">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--39">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--40">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--41">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--42">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--43">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--44">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--45">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--46">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--47">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--48">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--49">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--50">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--51">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--52">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--53">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--54">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--55">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--56">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--57">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--58">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--59">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--60">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--61">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--62">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--63">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--64">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--65">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--66">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--67">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--68">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--69">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--70">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--71">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--72">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--73">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--74">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--75">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--76">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--77">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--78">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--79">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--80">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--81">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--82">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--83">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--84">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--85">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--86">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--87">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--88">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--89">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--90">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--91">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--92">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--93">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--94">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--95">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--96">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--97">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--98">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--99">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--100">
+                <span class="gameboard__cell-point"></span>
+              </div>
+            </div>
+          </div>
+          <div class="gameboard__move-box">
+            <div class="gameboard__on-move"></div>
+          </div>
+          <div class="gameboard__cont gameboard__cont--blue">
+            <h2 class="gameboard__heading gameboard__heading--blue">
+              <div
+                class="gameboard__heading-icon-cont gameboard__heading-icon-cont--blue"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="gameboard__heading-icon gameboard__heading-icon--blue"
+                >
+                  <path
+                    d="M222.33,106.79,212,103.35V56a20,20,0,0,0-20-20H140V24a12,12,0,0,0-24,0V36H64A20,20,0,0,0,44,56v47.35l-10.33,3.44a20,20,0,0,0-13.67,19V152c0,64.63,100.8,90.57,105.09,91.64a11.94,11.94,0,0,0,5.82,0C135.2,242.57,236,216.63,236,152V125.77A20,20,0,0,0,222.33,106.79ZM68,60H188V95.35L131.79,76.62a11.85,11.85,0,0,0-7.58,0L68,95.35Zm144,92c0,36.69-58.08,60.43-84,67.59-25.94-7.17-84-30.9-84-67.59V128.65l72-24V168a12,12,0,0,0,24,0V104.65l72,24Z"
+                  ></path>
+                </svg>
+              </div>
+              <span>Blue Fleet</span>
+            </h2>
+            <div class="gameboard gameboard--blue" data-game-board-blue>
+              <div class="gameboard__cell gameboard__cell--1">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--2">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--3">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--4">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--5">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--6">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--7">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--8">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--9">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--10">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--11">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--12">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--13">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--14">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--15">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--16">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--17">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--18">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--19">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--20">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--21">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--22">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--23">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--24">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--25">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--26">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--27">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--28">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--29">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--30">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--31">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--32">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--33">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--34">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--35">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--36">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--37">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--38">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--39">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--40">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--41">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--42">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--43">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--44">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--45">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--46">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--47">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--48">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--49">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--50">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--51">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--52">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--53">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--54">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--55">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--56">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--57">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--58">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--59">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--60">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--61">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--62">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--63">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--64">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--65">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--66">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--67">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--68">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--69">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--70">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--71">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--72">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--73">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--74">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--75">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--76">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--77">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--78">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--79">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--80">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--81">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--82">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--83">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--84">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--85">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--86">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--87">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--88">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--89">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--90">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--91">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--92">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--93">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--94">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--95">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--96">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--97">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--98">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--99">
+                <span class="gameboard__cell-point"></span>
+              </div>
+              <div class="gameboard__cell gameboard__cell--100">
+                <span class="gameboard__cell-point"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <p class="footer__para">
+          <span>© 2024</span>
+          <a href="#" class="footer__link" rel="noopener noreferrer"
+            >Emrah Isovic
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="#000000"
+              viewBox="0 0 256 256"
+              class="footer__link-icon"
+            >
+              <path
+                d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"
+              ></path>
+            </svg>
+          </a>
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
