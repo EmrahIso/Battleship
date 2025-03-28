@@ -1,0 +1,15 @@
+@use '../utilities' as *;
+
+.header {
+  &__content {
+    height: 100%;
+    padding: 0 toRem(24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-neutral-100);
+    margin-bottom: toRem(24);
+    border-radius: toRem(12);
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,35 @@
+@use '../utilities' as *;
+
+.footer {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  padding: toRem(4) toRem(16) toRem(16) toRem(16);
+  margin-top: toRem(48);
+
+  &__para {
+    font-size: var(--fs-300);
+    color: var(--clr-neutral-800);
+    font-weight: 500;
+    font-family: var(--font-regular), sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: toRem(12);
+    padding-top: toRem(4);
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: currentColor;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
+  }
+
+  &__link-icon {
+    height: toRem(28);
+    fill: var(--clr-neutral-800);
+  }
+}

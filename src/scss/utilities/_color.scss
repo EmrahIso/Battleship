@@ -1,3 +1,26 @@
 // Colors
 
-$colors: ();
+$colors: (
+  org: (
+    400: #ec7100,
+  ),
+  ble: (
+    400: #2d68ff,
+  ),
+  prl: (
+    300: #efebff,
+    400: #beadff,
+    500: #633cff,
+  ),
+  neutral: (
+    100: #ffffff,
+    200: #fafafa,
+    300: #eeeeee,
+    400: #cccccc,
+    500: #999999,
+    600: #737373,
+    700: #5a5a5a,
+    800: #333333,
+    900: #191919,
+  ),
+);

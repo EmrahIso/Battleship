@@ -2,10 +2,55 @@
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: red;
+  background-color: var(--clr-neutral-200);
   font-size: var(--fs-300);
-  font-family: var(--font-regular);
+
+  & .body__grid {
+    margin-top: toRem(24);
+    display: grid;
+    height: 100%;
+    grid-template-rows: toRem(80) minmax(toRem(420), 1fr) toRem(80);
+    row-gap: toRem(42);
+  }
+}
+
+.container {
+  max-width: toRem(1170);
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: var(--fs-600);
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: flex;
+  gap: toRem(14);
+  align-items: center;
+  position: relative;
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: var(--clr-neutral-800);
+  }
+
+  &__icon {
+    height: 24px;
+    fill: var(--clr-neutral-100);
+
+    &-cont {
+      height: 30px;
+      width: 30px;
+      background-color: var(--clr-prl-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: toRem(6);
+    }
+  }
 }

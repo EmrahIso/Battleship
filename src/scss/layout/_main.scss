@@ -1,0 +1,11 @@
+@use '../utilities' as *;
+
+.main {
+  &__content {
+    position: relative;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: toRem(472) minmax(toRem(120), 1fr) toRem(472);
+  }
+}
