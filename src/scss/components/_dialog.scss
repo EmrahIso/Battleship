@@ -1,0 +1,45 @@
+@use '../utilities' as *;
+
+.dialog {
+  top: 50%;
+  left: 50%;
+  width: toRem(460);
+  padding: toRem(20);
+  z-index: 19;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  overflow-y: auto;
+  border: 0;
+
+  & .logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: toRem(48);
+  }
+
+  &__content-box {
+    border: 0;
+    background-color: var(--clr-neutral-100);
+    padding: toRem(40);
+    border-radius: toRem(15);
+  }
+
+  &::backdrop {
+    background-color: var(--clr-neutral-200);
+  }
+
+  &__heading {
+    font-family: var(--font-bold);
+    color: var(--clr-neutral-800);
+    text-transform: capitalize;
+    font-size: var(--fs-700);
+    line-height: 1.15;
+    margin-bottom: toRem(16);
+  }
+
+  &__description {
+    font-size: var(--fs-300);
+    color: var(--clr-neutral-600);
+    margin-bottom: toRem(32);
+  }
+}

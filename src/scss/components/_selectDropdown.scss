@@ -1,0 +1,126 @@
+@use '../utilities' as *;
+
+option {
+  border: 1px solid var(--clr-prl-500);
+}
+
+.select-dropdown {
+  position: relative;
+  width: toRem(136);
+
+  &__open-btn {
+    position: relative;
+    width: 100%;
+    font-size: var(--fs-200);
+    font-family: var(--font-bold);
+    cursor: pointer;
+    color: var(--clr-prl-500);
+    padding: toRem(12) toRem(16) toRem(12) toRem(16);
+    border-radius: toRem(9);
+    gap: toRem(8);
+    z-index: 19;
+
+    transition: all 0.3s;
+
+    border: 1px solid var(--clr-prl-500);
+    background-color: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: var(--clr-prl-300);
+    }
+
+    &:focus {
+      outline: 1px solid var(--clr-prl-500);
+    }
+  }
+
+  &__value {
+    text-align: left;
+  }
+
+  &__arrow {
+    margin-top: toRem(3);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--clr-prl-500);
+    transition: transform ease-in-out 0.3s;
+  }
+
+  &__list {
+    position: absolute;
+    list-style: none;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background-color: var(--clr-neutral-100);
+    border: 1px solid var(--clr-prl-500);
+    border-radius: toRem(9);
+    margin-top: toRem(10);
+    max-height: toRem(180);
+    overflow-y: hidden;
+    transition: all 0.5s ease;
+    z-index: 9;
+
+    /* List should be invisible by default */
+
+    transform: translateY(-25%) scaleY(1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    &:focus-within {
+      box-shadow: 0 15px 25px var(--clr-prl-300);
+    }
+
+    & li {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      border-bottom: 1px solid var(--clr-neutral-300);
+      gap: 1rem;
+      align-items: center;
+
+      &:hover {
+        background-color: var(--clr-prl-300);
+      }
+    }
+
+    & label {
+      font-family: var(--font-medium);
+      font-size: var(--fs-200);
+      padding: toRem(12) toRem(16);
+      cursor: pointer;
+      height: auto;
+      transition: all 0.3s;
+      color: var(--clr-prl-500);
+    }
+
+    & input:checked ~ label {
+      background-color: var(--clr-prl-300);
+      color: var(--clr-neutral-900);
+    }
+
+    & input[type='radio'] {
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  // Interactivity
+
+  &[data-select-dropdown-active='true'] &__list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scaleY(1);
+    pointer-events: all;
+  }
+
+  &[data-select-dropdown-active='true'] &__arrow {
+    transform: rotate(180deg);
+  }
+}

@@ -14,4 +14,26 @@
   &:hover {
     background-color: var(--clr-prl-300);
   }
+
+  &:focus {
+    outline: 1px solid var(--clr-prl-500);
+  }
+
+  &--submit {
+    border: 0;
+    color: var(--clr-neutral-100);
+    width: 100%;
+    background-color: var(--clr-prl-500);
+
+    &:hover {
+      box-shadow: 0 0 25px var(--clr-prl-400);
+      background-color: var(--clr-prl-500);
+    }
+
+    &:focus {
+      box-shadow: 0 0 25px var(--clr-prl-400);
+      background-color: var(--clr-prl-500);
+      outline: 0;
+    }
+  }
 }
