@@ -10,6 +10,20 @@
   background-color: transparent;
   overflow-y: auto;
   border: 0;
+  position: relative;
+
+  &--place {
+    width: toRem(660);
+
+    .logo {
+      margin-left: toRem(-32);
+    }
+
+    .dialog__content-box {
+      width: toRem(420);
+      margin-left: auto;
+    }
+  }
 
   & .logo {
     display: flex;
@@ -22,6 +36,13 @@
     background-color: var(--clr-neutral-100);
     padding: toRem(40);
     border-radius: toRem(15);
+
+    display: flex;
+    flex-direction: column;
+
+    & [data-form] {
+      order: 1;
+    }
   }
 
   &::backdrop {
@@ -41,5 +62,10 @@
     font-size: var(--fs-300);
     color: var(--clr-neutral-600);
     margin-bottom: toRem(32);
+
+    &--small {
+      font-size: var(--fs-200);
+      margin-bottom: toRem(-8);
+    }
   }
 }

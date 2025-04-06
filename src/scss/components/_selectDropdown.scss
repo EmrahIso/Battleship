@@ -7,6 +7,7 @@ option {
 .select-dropdown {
   position: relative;
   width: toRem(136);
+  margin-bottom: toRem(32);
 
   &__open-btn {
     position: relative;
@@ -40,6 +41,7 @@ option {
 
   &__value {
     text-align: left;
+    display: inline-block;
   }
 
   &__arrow {

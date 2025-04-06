@@ -5,6 +5,7 @@
   grid-column: 1 / 2;
   padding: toRem(4) toRem(16) toRem(16) toRem(16);
   margin-top: toRem(48);
+  margin-bottom: toRem(24);
 
   &__para {
     font-size: var(--fs-300);

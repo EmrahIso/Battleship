@@ -47,7 +47,6 @@
   &__mode-radio {
     height: 0;
     opacity: 0;
-    pointer-events: none;
     visibility: hidden;
 
     &-icon {
@@ -55,7 +54,7 @@
       height: toRem(20);
       width: toRem(20);
       transition: all 0.2s;
-      fill: var(--clr-neutral-800);
+      fill: #000000;
     }
 
     &:checked {
@@ -65,10 +64,45 @@
         outline: 2px solid var(--clr-prl-400);
         color: var(--clr-neutral-100);
 
-        & > .form__mode-radio-icon {
-          fill: var(--clr-neutral-300);
+        & .form__mode-radio-icon {
+          -webkit-filter: brightness(10);
+          filter: brightness(10);
         }
       }
     }
+
+    &--blue {
+      &:checked {
+        & + label {
+          background-color: var(--clr-ble-400);
+          outline: 2px solid var(--clr-ble-400);
+
+          .form__mode-radio-icon {
+            -webkit-filter: invert(100%);
+            filter: invert(100%);
+          }
+        }
+      }
+    }
+
+    &--org {
+      &:checked {
+        & + label {
+          background-color: var(--clr-org-400);
+          outline: 2px solid var(--clr-org-400);
+
+          .form__mode-radio-icon {
+            -webkit-filter: invert(100%);
+            filter: invert(100%);
+          }
+        }
+      }
+    }
+  }
+
+  &__button-cont {
+    display: flex;
+    align-items: stretch;
+    gap: toRem(12);
   }
 }

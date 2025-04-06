@@ -37,6 +37,7 @@ body {
   &__link:visited {
     text-decoration: none;
     color: var(--clr-neutral-800);
+    order: 1;
   }
 
   &__icon {
@@ -51,6 +52,10 @@ body {
       align-items: center;
       justify-content: center;
       border-radius: toRem(6);
+
+      &:first-child {
+        order: 2;
+      }
     }
   }
 }

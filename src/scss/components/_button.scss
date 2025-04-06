@@ -36,4 +36,38 @@
       outline: 0;
     }
   }
+
+  &--rotate {
+    &-org {
+      background-color: var(--clr-org-400);
+      border: 1px solid var(--clr-org-400);
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 10px var(--clr-org-400);
+        background-color: var(--clr-org-400);
+        color: var(--clr-neutral-100);
+        outline: 1px solid var(--clr-org-400);
+      }
+    }
+
+    &-blue {
+      background-color: var(--clr-ble-400);
+      border: 1px solid var(--clr-ble-400);
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 10px var(--clr-ble-400);
+        background-color: var(--clr-ble-400);
+        color: var(--clr-neutral-100);
+        outline: 1px solid var(--clr-ble-400);
+      }
+    }
+  }
+
+  &__icon {
+    height: toRem(24);
+    width: toRem(24);
+    fill: var(--clr-neutral-100);
+  }
 }
