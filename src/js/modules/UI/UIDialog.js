@@ -429,11 +429,6 @@ function UIPlaceOrangeShipsDialog(parentEl) {
   dialogGameBoardShipCont.setAttribute('data-ship-cont', '');
   dialogContent.appendChild(dialogGameBoardShipCont);
 
-  const dialogGameBoardShipHeading = document.createElement('h3');
-  dialogGameBoardShipHeading.textContent = 'Orange Fleet';
-  dialogGameBoardShipHeading.classList.add('gameboard__ship-cont-heading');
-  dialogGameBoardShipCont.appendChild(dialogGameBoardShipHeading);
-
   const shipNames = {
     1: 'Patrol',
     2: 'Submarine',
@@ -455,22 +450,19 @@ function UIPlaceOrangeShipsDialog(parentEl) {
       index = 3;
     }
 
-    const shipPlaceHolder = document.createElement('div');
-    shipPlaceHolder.classList.add(
+    const ship = document.createElement('div');
+    ship.classList.add(
       'gameboard__ship',
       'gameboard__ship--org',
       `gameboard__ship--${index}`,
       `gameboard__ship--${index}-${shipNames[i].toLowerCase()}`,
     );
-    shipPlaceHolder.setAttribute('data-ship', '');
-    shipPlaceHolder.setAttribute('data-ship-org', '');
-    shipPlaceHolder.setAttribute('data-ship-length', `${index}`);
-    shipPlaceHolder.setAttribute('draggable', 'true');
-    dialogGameBoardShipCont.appendChild(shipPlaceHolder);
-
-    const shipPlaceHolderSpan = document.createElement('span');
-    shipPlaceHolderSpan.textContent = shipNames[i];
-    shipPlaceHolder.appendChild(shipPlaceHolderSpan);
+    ship.setAttribute('data-ship', '');
+    ship.setAttribute('data-ship-org', '');
+    ship.setAttribute('data-ship-length', `${index}`);
+    ship.setAttribute('data-ship-type', `${shipNames[i].toLowerCase()}`);
+    ship.setAttribute('draggable', 'true');
+    dialogGameBoardShipCont.appendChild(ship);
   }
 
   UICreateBoard(
@@ -545,11 +537,6 @@ function UIPlaceBlueShipsDialog(parentEl) {
   dialogGameBoardShipCont.setAttribute('data-ship-cont', '');
   dialogContent.appendChild(dialogGameBoardShipCont);
 
-  const dialogGameBoardShipHeading = document.createElement('h3');
-  dialogGameBoardShipHeading.textContent = 'Blue Fleet';
-  dialogGameBoardShipHeading.classList.add('gameboard__ship-cont-heading');
-  dialogGameBoardShipCont.appendChild(dialogGameBoardShipHeading);
-
   const shipNames = {
     1: 'Patrol',
     2: 'Submarine',
@@ -571,22 +558,19 @@ function UIPlaceBlueShipsDialog(parentEl) {
       index = 3;
     }
 
-    const shipPlaceHolder = document.createElement('div');
-    shipPlaceHolder.classList.add(
+    const ship = document.createElement('div');
+    ship.classList.add(
       'gameboard__ship',
       'gameboard__ship--blue',
       `gameboard__ship--${index}`,
       `gameboard__ship--${index}-${shipNames[i].toLowerCase()}`,
     );
-    shipPlaceHolder.setAttribute('data-ship', '');
-    shipPlaceHolder.setAttribute('data-ship-blue', '');
-    shipPlaceHolder.setAttribute('data-ship-length', `${index}`);
-    shipPlaceHolder.setAttribute('draggable', 'true');
-    dialogGameBoardShipCont.appendChild(shipPlaceHolder);
-
-    const shipPlaceHolderSpan = document.createElement('span');
-    shipPlaceHolderSpan.textContent = shipNames[i];
-    shipPlaceHolder.appendChild(shipPlaceHolderSpan);
+    ship.setAttribute('data-ship', '');
+    ship.setAttribute('data-ship-blue', '');
+    ship.setAttribute('data-ship-length', `${index}`);
+    ship.setAttribute('data-ship-type', `${shipNames[i].toLowerCase()}`);
+    ship.setAttribute('draggable', 'true');
+    dialogGameBoardShipCont.appendChild(ship);
   }
 
   UICreateBoard(
