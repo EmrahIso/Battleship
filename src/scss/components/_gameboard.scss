@@ -23,10 +23,18 @@
 
   &--org {
     background-color: transparent;
+
+    & .gameboard__cell.marked {
+      background-color: var(--clr-org-400);
+    }
   }
 
   &--blue {
     background-color: transparent;
+
+    & .gameboard__cell.marked {
+      background-color: var(--clr-ble-400);
+    }
   }
 
   & > &__cell {
@@ -239,6 +247,7 @@
     margin: toRem(32) 0;
 
     & > .gameboard__cell {
+      //pointer-events: none;
       cursor: default;
 
       &:hover span {
@@ -366,16 +375,23 @@
   &__ship-cont {
     position: absolute;
 
-    &-heading {
-      color: var(--clr-neutral-700);
+    top: 30%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: toRem(32);
+
+    &[data-state-vertical] {
+      flex-direction: row;
+      gap: toRem(8);
+
+      & > * {
+        width: toRem(26);
+      }
     }
 
-    & {
-      top: 30%;
-      left: 0;
-      display: flex;
-      flex-direction: column;
-      gap: toRem(32);
+    &-heading {
+      color: var(--clr-neutral-700);
     }
   }
 
@@ -395,7 +411,7 @@
       pointer-events: none;
     }
 
-    &[data-ship-used] > span {
+    &[data-ship-used] {
       display: none;
     }
 
@@ -411,39 +427,28 @@
       width: toRem(56);
 
       &[data-state-vertical] {
-        top: toRem(10);
-        left: toRem(-10);
+        height: toRem(56);
       }
     }
 
     &--3 {
       width: toRem(91);
-
-      &-destroyer[data-state-vertical] {
-        top: toRem(-87.5);
-        left: toRem(35);
-      }
-
-      &-submarine[data-state-vertical] {
-        top: toRem(-30);
-        left: toRem(90);
+      &[data-state-vertical] {
+        height: toRem(91);
       }
     }
 
     &--4 {
       width: toRem(126);
-
       &[data-state-vertical] {
-        left: toRem(-44);
+        height: toRem(126);
       }
     }
 
     &--5 {
       width: toRem(161);
-
       &[data-state-vertical] {
-        top: toRem(-40);
-        left: toRem(0);
+        height: toRem(161);
       }
     }
 
