@@ -1,3 +1,9 @@
+// Module that creates GameBoard component
+// There are two types of gameBoards: playable and placeable.
+
+// playable boards => used for the game itself to attack other players ships and track results
+// placeable boards => which players use to place their ships on the board (by Drag and Drop).
+
 import shipIcon from '../../../../assets/images/ship-icon.svg';
 
 function UICreateBoard(parentEl, playerColor, isPlaceGameBoard) {
@@ -78,11 +84,6 @@ function UICreateBoard(parentEl, playerColor, isPlaceGameBoard) {
           .querySelector(`[data-game-board-${playerColor}]`)
           .appendChild(cell);
       }
-
-      const cellPoint = document.createElement('span');
-      cellPoint.classList.add('gameboard__cell-point');
-      cellPoint.style.pointerEvents = 'none';
-      cell.appendChild(cellPoint);
     }
   }
 }

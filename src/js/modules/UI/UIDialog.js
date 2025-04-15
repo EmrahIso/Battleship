@@ -1,4 +1,5 @@
-// Create Dialog JS component and all modifiers.
+// Module that creates Dialog component
+// Every function creates new dialog that gathers information about something related to the game settings.
 
 import { UICreateSelectDropdown } from './UISelectDropdown.js';
 import { UICreateBoard } from './UIBoard.js';
@@ -580,10 +581,50 @@ function UIPlaceBlueShipsDialog(parentEl) {
   );
 }
 
+function UIEndScreenDialog(parentEl, winner) {
+  const dialog = UICreateDialogTemplate(parentEl);
+
+  dialog.showModal();
+
+  dialog.classList.add('dialog', 'dialog--end-screen');
+  dialog.setAttribute('data-dialog-es', '');
+
+  const dialogContent = document.createElement('div');
+  dialogContent.classList.add('dialog__content-box');
+  dialog.appendChild(dialogContent);
+
+  const dialogContentHeading = document.createElement('h2');
+  dialogContentHeading.textContent = 'The match is over';
+  dialogContentHeading.classList.add('dialog__heading');
+  dialogContent.appendChild(dialogContentHeading);
+
+  const dialogContentDescription = document.createElement('p');
+  dialogContentDescription.classList.add('dialog__description');
+  dialogContentDescription.textContent =
+    'Click on New Game button to start new game.';
+  dialogContent.appendChild(dialogContentDescription);
+
+  const dialogMatchWinnerIndicator = document.createElement('div');
+  dialogMatchWinnerIndicator.setAttribute('data-match-winner', '');
+  dialogMatchWinnerIndicator.setAttribute(`data-winner-${winner}`, '');
+  dialogMatchWinnerIndicator.classList.add('dialog__match-winner');
+  dialogMatchWinnerIndicator.textContent = `The ${winner === 'org' ? 'Orange' : 'Blue'} player won!`;
+  dialogContent.appendChild(dialogMatchWinnerIndicator);
+
+  const dialogNewGameBtn = document.createElement('button');
+  dialogNewGameBtn.type = 'button';
+  dialogNewGameBtn.setAttribute('autofocus', '');
+  dialogNewGameBtn.setAttribute('data-dialog-new-game-btn', '');
+  dialogNewGameBtn.classList.add('button', 'button--submit'); // This is not a submit button, but I want to have the same styles on this button as on the submit buttons.
+  dialogNewGameBtn.textContent = 'New Game';
+  dialogContent.appendChild(dialogNewGameBtn);
+}
+
 export {
   UIStartScreenDialog,
   UIPlayerVsAIDialog,
   UIPlayerVsPlayerDialog,
   UIPlaceOrangeShipsDialog,
   UIPlaceBlueShipsDialog,
+  UIEndScreenDialog,
 };

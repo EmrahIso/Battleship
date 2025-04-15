@@ -1,3 +1,5 @@
+// Module that creates AIDifficulty select dropdown component
+
 function UICreateSelectDropdown(parentEl) {
   const selectDropdown = document.createElement('div');
   selectDropdown.classList.add('select-dropdown');
