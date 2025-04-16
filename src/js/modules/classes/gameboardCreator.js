@@ -1,3 +1,5 @@
+// Class for GameBoard instances
+
 import { Ship } from './shipCreator.js';
 
 class GameBoard {
@@ -122,6 +124,7 @@ class GameBoard {
     this.#receiveAttackCordsPairValidity.apply(null, arguments);
 
     const identOnBoard = this.board[cordArr[0]][cordArr[1]];
+    console.log('identOnBoard:', identOnBoard);
 
     let result;
 
@@ -130,17 +133,21 @@ class GameBoard {
         result = false; // miss
         break;
       case null:
-        result = null; // Already shot
+        result = null; // Already shot => miss
+        break;
+      case true:
+        result = null; // Already shot => hit
         break;
       default:
         result = true; // hit
         break;
     }
 
-    if (!result) {
-      this.board[cordArr[0]][cordArr[1]] = null;
-    } else if (result) {
-      this.board[cordArr[0]][cordArr[1]] = null;
+    if (result === false) {
+      this.board[cordArr[0]][cordArr[1]] = false; // miss
+    } else if (result === true) {
+      this.board[cordArr[0]][cordArr[1]] = true; // hit
+      console.log(identOnBoard);
       this.#shipIdentifiers[identOnBoard].hit();
     }
     return result;

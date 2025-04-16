@@ -1,3 +1,5 @@
+// Class for Ship instances
+
 class Ship {
   constructor(size) {
     this.size = size;

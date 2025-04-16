@@ -1,4 +1,7 @@
+// Module that stores handlers for select dropdown component.
+
 const DOMSelectDropdown = (function () {
+  // Handler to open select dropdown by clicking the open dropdown btn.
   const openDropdownBtnElClickEventHandler = (e) => {
     const selectDropdownEl = document.querySelector('[data-select-dropdown]');
     const openDropdownBtnEl = document.querySelector(
@@ -24,6 +27,7 @@ const DOMSelectDropdown = (function () {
     );
   };
 
+  // Handler to automatically close dropdown after choosing selected value (by clicking via mouse).
   const autoCloseSelectDropdownElClickEventHandler = (e) => {
     const selectDropdownEl = document.querySelector('[data-select-dropdown]');
 
@@ -34,12 +38,13 @@ const DOMSelectDropdown = (function () {
     // To automatically close dropdown after clicking selected value
 
     if (e.type === 'click' && e.target.hasAttribute('for')) {
-      // e.target.hasAttribute('for') => to make sure that label is clicked
+      // to make sure that label is clicked => e.target.hasAttribute('for')
       displaySelectedValueEl.textContent = e.target.textContent;
       selectDropdownEl.setAttribute('data-select-dropdown-active', 'false');
     }
   };
 
+  // Handler to automatically close dropdown after choosing selected value (by keyDown event via keyboard).
   const autoCloseSelectDropdownElKeydownEventHandler = (e) => {
     const selectDropdownEl = document.querySelector('[data-select-dropdown]');
 
@@ -70,6 +75,7 @@ const DOMSelectDropdown = (function () {
     }
   };
 
+  // A Handler that supports the keyboard by enabling selection of options and scrolling through them using the ArrowDown and ArrowUp keys on the keyUp event..
   const keyboardSupportForSelectDropdownElKeyupEventHandler = (e) => {
     const selectDropdownEl = document.querySelector('[data-select-dropdown]');
 

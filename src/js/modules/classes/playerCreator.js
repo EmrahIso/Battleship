@@ -1,4 +1,6 @@
-import { GameBoard } from './gameboardCreator';
+// Class for Player instances
+
+import { GameBoard } from './gameboardCreator.js';
 
 class Player {
   constructor(type) {

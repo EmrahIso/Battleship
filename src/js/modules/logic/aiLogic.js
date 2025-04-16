@@ -1,8 +1,6 @@
 // This function places ships using AI intelligence.
 // returns an array of coordinates (array of two integers)
 const aiShipPlaceIndices = (shipLength) => {
-  // In this logical validation of the auto-placing integer 10 represents the width of the board while integer 100 represents total number of board cells.
-
   const randomStartShipIndex = Math.floor(Math.random() * 100);
 
   const width = 10;
