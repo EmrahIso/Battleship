@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="An interactive implementation of the classic Battleship game in JavaScript, where two players can play against each other or challenge an AI opponent."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BattleShip</title>
   </head>
@@ -10,7 +14,9 @@
       <header class="header">
         <div class="container header__content">
           <div>
-            <button type="button" class="button">New Game</button>
+            <button type="button" class="button" data-new-game-btn>
+              New Game
+            </button>
           </div>
           <h1 class="logo">
             <span class="logo__icon-cont">
@@ -48,14 +54,18 @@
       <main class="main">
         <div class="container main__content">
           <div class="gameboard__move-box">
-            <div class="gameboard__on-move"></div>
+            <div class="gameboard__on-move" data-on-move></div>
           </div>
         </div>
       </main>
       <footer class="footer">
         <p class="footer__para">
           <span>© 2024</span>
-          <a href="#" class="footer__link" rel="noopener noreferrer"
+          <a
+            href="https://github.com/EmrahIso/Battleship.git"
+            class="footer__link"
+            rel="noopener noreferrer"
+            target="_blank"
             >Emrah Isovic
 
             <svg

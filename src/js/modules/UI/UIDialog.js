@@ -106,11 +106,11 @@ function UIStartScreenDialog(parentEl) {
   listScoreDash1.textContent = '-';
   listLabel1.appendChild(listScoreDash1);
 
-  const listAiIcon1 = document.createElement('img');
-  listHumanIcon1.alt = 'ai icon';
-  listAiIcon1.src = aiIcon;
-  listAiIcon1.classList.add('form__mode-radio-icon');
-  listLabel1.appendChild(listAiIcon1);
+  const listHumanIcon11 = document.createElement('img');
+  listHumanIcon11.alt = 'human icon';
+  listHumanIcon11.src = humanIcon;
+  listHumanIcon11.classList.add('form__mode-radio-icon');
+  listLabel1.appendChild(listHumanIcon11);
 
   const listItem2 = document.createElement('li');
   dialogList.appendChild(listItem2);
@@ -143,7 +143,7 @@ function UIStartScreenDialog(parentEl) {
   listLabel2.appendChild(listScoreDash2);
 
   const listAiIcon2 = document.createElement('img');
-  listHumanIcon2.alt = 'ai icon';
+  listAiIcon2.alt = 'ai icon';
   listAiIcon2.src = aiIcon;
   listAiIcon2.classList.add('form__mode-radio-icon');
   listLabel2.appendChild(listAiIcon2);

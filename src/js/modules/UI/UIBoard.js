@@ -46,6 +46,7 @@ function UICreateBoard(parentEl, playerColor, isPlaceGameBoard) {
 
     const gameBoardHeadingIcon = document.createElement('img');
     gameBoardHeadingIcon.src = shipIcon;
+    gameBoardHeadingIcon.alt = 'ship icon';
     gameBoardHeadingIcon.setAttribute('alt', 'icon');
     gameBoardHeadingIcon.classList.add(
       'gameboard__heading-icon',

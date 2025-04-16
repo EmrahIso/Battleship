@@ -11,6 +11,9 @@
     background-color: var(--clr-neutral-100);
     padding: toRem(28) toRem(52) toRem(42) toRem(52);
     border-radius: toRem(12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &--org {
       grid-column: 1 / 2;
@@ -55,54 +58,6 @@
 
       & > span {
         display: none;
-      }
-    }
-
-    & > .gameboard__cell-point {
-      display: inline-block;
-      position: absolute;
-      height: toRem(12);
-      width: toRem(12);
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: transparent;
-      transition: all 0.2s;
-
-      &[data-hit] {
-        background-color: transparent;
-        border: 2px solid var(--clr-prl-500);
-        height: toRem(16);
-        width: toRem(16);
-
-        &::after {
-          content: 'x';
-          position: absolute;
-          font-family: var(--font-bold);
-          font-size: var(--fs-100);
-          color: var(--clr-prl-500);
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          transition: all 0.2;
-        }
-      }
-
-      &[data-miss] {
-        background-color: var(--clr-neutral-700);
-      }
-    }
-
-    &:hover > .gameboard__cell-point {
-      background-color: var(--clr-neutral-500);
-
-      &[data-hit] {
-        background-color: transparent;
-      }
-
-      &[data-miss] {
-        background-color: var(--clr-neutral-700);
       }
     }
 
@@ -227,6 +182,14 @@
     &--10::after {
       content: 'J';
     }
+
+    &[data-hit] {
+      background-color: red !important;
+    }
+
+    &[data-miss] {
+      background-color: grey !important;
+    }
   }
 
   &--org > &__cell {
@@ -247,8 +210,11 @@
     margin: toRem(32) 0;
 
     & > .gameboard__cell {
-      //pointer-events: none;
       cursor: default;
+
+      & span {
+        display: none;
+      }
 
       &:hover span {
         display: none;
@@ -269,11 +235,12 @@
     color: var(--clr-neutral-800);
     display: flex;
     align-items: center;
+    align-self: flex-start;
     gap: toRem(12);
 
     &-icon {
       height: toRem(24);
-      fill: var(--clr-neutral-300);
+      filter: invert(10);
 
       &-cont {
         height: 30px;
@@ -332,7 +299,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      content: 'orange fleet';
+      content: 'orange shoots';
 
       visibility: hidden;
       opacity: 0;
@@ -343,7 +310,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      content: 'blue fleet';
+      content: 'blue shoots';
 
       visibility: hidden;
       opacity: 0;
