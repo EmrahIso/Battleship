@@ -20,7 +20,7 @@ const DOMGameInfoFlowControl = (function () {
   const gameInfo = {
     mode: null, // pvp / pvai
     playsFirst: null, // org / blue
-    aiDifficulty: null, // easy / medium / hard
+    //aiDifficulty: null, // easy / medium / hard
     boardOrg: null,
     boardBlue: null,
   };
@@ -163,15 +163,13 @@ const DOMGameInfoFlowControl = (function () {
     const allowedValues = ['easy', 'medium', 'hard'];
 
     let isDropdownValid = false;
-    let dropdownValue;
 
     if (allowedValues.includes(selectDropdownValue)) {
       isDropdownValid = true;
-      dropdownValue = selectDropdownValue;
     }
 
     if (isRadioValid && isDropdownValid) {
-      gameInfo.aiDifficulty = dropdownValue;
+      //gameInfo.aiDifficulty = dropdownValue; //  I don't need aiDifficulty on this version of the project.
       dialogContEl.querySelector('[data-dialog-pvai]').close(); // Close player vs ai modal
       dialogContEl.querySelector('[data-dialog-pvai]').replaceChildren();
       dialogContEl.querySelector('[data-dialog-pvai]').remove();
@@ -390,6 +388,16 @@ const DOMGameInfoFlowControl = (function () {
 
     let isValid = true;
 
+    const shipContEl = document.querySelector('[data-ship-blue-cont]');
+
+    const allShips = Array.from(
+      shipContEl.querySelectorAll('[data-ship-blue]'),
+    );
+
+    allShips.forEach((ship) => {
+      if (ship.getAttribute('data-ship-used') !== '') isValid = false;
+    });
+
     if (isValid) {
       const gameBoardEl = document.querySelector(
         '[data-dialog-place-blue] [data-place-game-board-blue]',
@@ -479,15 +487,13 @@ const DOMGameInfoFlowControl = (function () {
     }
   };
 
-  console.log(myVar);
-
   let gatherGameInfoObserver = new MutationObserver(
     isFinishedGatherGameInfoObserver,
   );
 
   let startGameCustomEvent = new CustomEvent('startgame');
 
-  const startGameWindowCustomEventHandler = (e) => {
+  const startGameWindowCustomEventHandler = () => {
     screenGameControl(gameInfo);
   };
 

@@ -2,7 +2,7 @@
 
 const DOMSelectDropdown = (function () {
   // Handler to open select dropdown by clicking the open dropdown btn.
-  const openDropdownBtnElClickEventHandler = (e) => {
+  const openDropdownBtnElClickEventHandler = () => {
     const selectDropdownEl = document.querySelector('[data-select-dropdown]');
     const openDropdownBtnEl = document.querySelector(
       '[data-select-dropdown-open-btn]',

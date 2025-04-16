@@ -110,7 +110,7 @@ const DOMBoard = (function () {
       allBoardCells.forEach((cell) => {
         if (cell.classList.contains(`marked--${shipType}`)) {
           cell.classList.remove('marked', `marked--${shipType}`);
-          shipCell.removeAttribute('data-game-board-cell-marked');
+          cell.removeAttribute('data-game-board-cell-marked');
         }
       });
 

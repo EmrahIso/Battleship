@@ -6,13 +6,7 @@ import { Player } from '../classes/playerCreator.js';
 import { GameBoard } from '../classes/gameboardCreator.js';
 import { Ship } from '../classes/shipCreator.js';
 
-const gameControl = ({
-  mode,
-  playsFirst,
-  aiDifficulty,
-  boardOrg,
-  boardBlue,
-}) => {
+const gameControl = ({ mode, playsFirst, boardOrg, boardBlue }) => {
   // Create Orange Fleet Player
   const orgPlayer = new Player(
     mode === 'pvp' ? 'human' : playsFirst === 'org' ? 'human' : 'ai',
@@ -51,6 +45,7 @@ const gameControl = ({
           );
           ships.org.push(ship);
         }
+        break;
       case 1:
         // Create Blue Ships
         for (let j = 1; j <= 5; j++) {

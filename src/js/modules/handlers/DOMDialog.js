@@ -28,7 +28,7 @@ const DOMDialog = (function () {
 
     const shipsElArray = Array.from(shipContEl.querySelectorAll('[data-ship]'));
 
-    shipsElArray.forEach((ship, index) => {
+    shipsElArray.forEach((ship) => {
       if (targetFleet === 'blue' ? shipAngleBlue : shipAngleOrange === 90) {
         ship.setAttribute('data-state-vertical', '');
         shipContEl.setAttribute('data-state-vertical', '');
@@ -40,7 +40,7 @@ const DOMDialog = (function () {
   };
 
   // Handler to reload the page (allowing players to start a new game) by clicking new game btn (only shown in end-screen dialogs).
-  const dialogNewGameBtnClickEventHandler = (e) => {
+  const dialogNewGameBtnClickEventHandler = () => {
     location.reload();
   };
 

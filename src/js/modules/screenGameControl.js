@@ -22,13 +22,7 @@ UICreateBoard(document.querySelector('.main__content'), 'blue', false);
 
 // screenGameControl => main function that uses collected information about game and initiates and controls the flow of the game.
 
-const screenGameControl = ({
-  mode,
-  playsFirst,
-  aiDifficulty,
-  boardOrg,
-  boardBlue,
-}) => {
+const screenGameControl = ({ mode, playsFirst, boardOrg, boardBlue }) => {
   onMove = playsFirst;
 
   // gameControl => To have access to logical part of the game flow control.
@@ -36,7 +30,6 @@ const screenGameControl = ({
   game = gameControl({
     mode,
     playsFirst,
-    aiDifficulty,
     boardOrg,
     boardBlue,
   });
